@@ -3,62 +3,44 @@ title = "Jason Chiu's Site"
 description = "Portfolio of Jason Chiu, M.CS. Computer Science graduate from University of Illinois Urbana-Champaign"
 +++
 
-# [Jason Chiu](https://codeberg.org/ljchiu)
+# [Jason Chiu's Site](https://codeberg.org/ljchiu)
 
-DevOps & ML Platform Engineering @ Windsurf
 
-M.CS. in *Computer Science* @ University of Illinois Urbana-Champaign  
+Hi! I'm at Windsurf doing DevOps & ML Platform Engineering in the Bay Area! I
+went to UIUC (University of Illinois Urbana-Champaign) for both my Bachelors in
+CS + Music and Masters in CS. I enjoy doing Linux Administration, crafting
+optimized Docker images, and working with Bazel, so feel free to contact me via
+email:
 
-B.S. in *Computer Science and Music* Class of 2024 @ University of Illinois Urbana-Champaign
+- [`jobs@jasonchiu.slmail.me`](mailto:jobs@jasonchiu.slmail.me) (for job opportunities)
+- [`general@jasonchiu.slmail.me`](mailto:general@jasonchiu.slmail.me) (anything else)
+  - My public PGP key:
+  [`DBED259BB132CCE96AC4D3F7689BA4FF85AA0D65`](/public.asc). Please
+  also include your public key in your email if using it.
+  - You can also request that I reply with a different email alias (via
+  SimpleLogin; `slmail.me` is one of their domains).
 
-## Programming languages in which I am fluent (in an arbitrary order)
+You can also communicate with me on Matrix (install the Element app to chat), my
+ID is `@jasonyip:matrix.org`
 
-- Python 3
-- C
-- C++
-- Bash/POSIX Shell
-- Dockerfile
-- Nim
-- Zig
-- SQL
-- Ocaml
-- Go
-- Rust
-- GitHub Actions
-- Protobuf/gRPC
+Or XMPP. My Jabber ID: `ljyip@nixnet.services`
 
-## Extracurriculars
+My GitHub (which is not an instant messaging platform):
+[`jaschiu`](https://github.com/jaschiu)
 
-- Currently working on:
-    - VPS from scratch
-        - Docker Compose
-        - CrowdSec
-        - Authelia
-        - LDAP
-        - Prometheus + Grafana
-        - Email
-        - and more!
-- Making pull requests to awesome FOSS projects that I use here and there
-- Music Production with open source software
-    - Ardour
-- Gentoo Linux tweaking and *ricing*
-    - Hyprland
-    - Neovim
-    - LibreWolf
-    - Betterbird
-    - Kitty Terminal
+Happy to receive feedback in the open source work I do, or job opportunities
+that fit my interests!
 
-## RSO/Club Memberships at UIUC
+## My time at UIUC
 
-- Formerly GNU/Linux User Group Special Interest Group (SIG) of ACM
+I was part of UIUC's GLUG SIG (the GNU/Linux User Group Special Interest Group
+of ACM). If you're currently a UIUC student, you should definitely join it!
 
-## Ask me anything about these UIUC courses I have completed
+Ask me anything about these UIUC courses I have completed:
 
-- [Community College Course Equivalent] CS173 (Discrete Structures)
-- [Passed Proficiency Test] CS124 (Introduction to Computer Science I)
 - CS128 (Introduction to Computer Science II)
-- [Passed Proficiency Test] CS225 (Data Structures)
 - CS[23]40 (Introduction to Computer Systems)
+  - I took it the last semester it was coded as CS240, it's now CS340
 - CS222 (Software Design Lab)
 - CS374 (Introduction to Algorithms & Models of Computation)
 - CS361 (Probability & Statistics for Computer Science)
@@ -74,9 +56,18 @@ B.S. in *Computer Science and Music* Class of 2024 @ University of Illinois Urba
 - CS598CC (Cloud Computing Capstone)
 - CS598FDC (Foundations of Data Curation)
 - ECE402 (Electronic Music Synthesis)
-
 - MUS105 (Computation & Music I)
 - MUS205 (Computation & Music II)
 - MUS305 (Computation & Music III)
 - MUS407 (Electronic Music Techniques I)
 - MUS209 (Musical Acoustics)
+
+## Hobbies
+
+Powerlifting and long-distance running. Competitive Smash Ultimate. Learning
+the Lojban language. Gentoo Linux.
+
+I still have my WIP Homelab project to do, but once it's ready, I will no longer
+use GitHub pages to host this site (even if it means sacrificing `1 - 1e-9`
+availability)
+
