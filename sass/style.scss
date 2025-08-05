@@ -1,0 +1,208 @@
+// CSS Variables for theming
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --border-color: #e9ecef;
+  --link-color: #0066cc;
+  --link-hover: #004499;
+  --code-bg: #f8f9fa;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --header-bg: #2d2d2d;
+  --border-color: #404040;
+  --link-color: #66b3ff;
+  --link-hover: #99ccff;
+  --code-bg: #2d2d2d;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Header and navigation
+header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#theme-toggle {
+  background: none;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: var(--border-color);
+    transform: scale(1.1);
+  }
+}
+
+// Main content
+main {
+  min-height: calc(100vh - 140px);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+// Typography
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem 0;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+// Links
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: 1rem 0 1rem 2rem;
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  ul, ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Code styling
+code {
+  background-color: var(--code-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--code-bg);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+// Footer
+footer {
+  background-color: var(--header-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+  transition: background-color 0.3s ease;
+  
+  p {
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.7;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  nav {
+    padding: 0 1rem;
+  }
+}
+
+// Smooth transitions for theme changes
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
