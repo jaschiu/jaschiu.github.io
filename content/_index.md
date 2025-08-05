@@ -1,6 +1,6 @@
 +++
 title = "Jason Chiu's Site"
-description = "Portfolio of Jason Chiu, M.CS. Computer Science graduate from University of Illinois Urbana-Champaign"
+description = "Jason Chiu's Site"
 +++
 
 # [Jason Chiu's Site](https://codeberg.org/ljchiu)

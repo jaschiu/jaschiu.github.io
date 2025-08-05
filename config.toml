@@ -2,7 +2,7 @@
 base_url = "https://jaschiu.github.io"
 
 # The site title and description
-title = "Jason Chiu - Portfolio"
+title = "Jason Chiu's Site"
 description = "Jason Chiu's Site"
 
 # Whether to automatically compile all Sass files in the sass directory
