@@ -5,4 +5,4 @@ description = "Jason Chiu's Site"
 
 # [Jason Chiu's Site](https://codeberg.org/ljchiu)
 
-{% include "content.md" %}
+{% include "../profile/README.md" %}
