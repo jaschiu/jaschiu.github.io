@@ -5,4 +5,4 @@ description = "Jason Chiu's Site"
 
 # [Jason Chiu's Site](https://codeberg.org/ljchiu)
 
-{% include "../profile/README.md" %}
+{{ load_data(path="../profile/README.md", format="plain") | markdown | safe }}
