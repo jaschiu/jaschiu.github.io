@@ -3,5 +3,6 @@
 {% block content %}
 <div class="container">
     {{ section.content | safe }}
+    {{ load_data(path="profile/README.md", format="plain") | markdown | safe }}
 </div>
 {% endblock content %}
