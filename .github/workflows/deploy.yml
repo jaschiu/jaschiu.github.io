@@ -1,25 +1,70 @@
-on: push
 name: Build and deploy GH Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   # Build the site
   build:
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        id: checkout
+        background: true
+        uses: actions/checkout@main
         with:
-          submodules: 'recursive'
-      
-      - name: Install zola
-        run: sudo snap install --edge zola
+          submodules: recursive
+          persist-credentials: false
 
-      - name: Build site
-        run: zola build
+      - name: Add pkg.haus APT repository
+        run: |
+          sudo curl -fsSL -o /usr/share/keyrings/pkghaus-archive-keyring.gpg \
+            https://apt.pkg.haus/pkghaus-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/pkghaus-archive-keyring.gpg] https://apt.pkg.haus trixie main" \
+            | sudo tee /etc/apt/sources.list.d/pkghaus.list > /dev/null
+          sudo apt-get update \
+            -o Dir::Etc::sourcelist="sources.list.d/pkghaus.list" \
+            -o Dir::Etc::sourceparts="-" \
+            -o APT::Get::List-Cleanup="0"
+
+      - name: Install zola
+        uses: awalsh128/cache-apt-pkgs-action@master
+        with:
+          packages: zola=0.23.6-4~haus13+1
+          version: 1.0
+
+      - name: Wait for checkout
+        wait: checkout
+
+      - name: Cache Zola processed images
+        uses: actions/cache@main
+        with:
+          path: static/processed_images
+          key: zola-processed-images-${{ runner.os }}-${{ hashFiles('config.toml', 'content/**', 'static/**', '!static/processed_images/**', 'templates/**') }}
+          restore-keys: |
+            zola-processed-images-${{ runner.os }}-
+
+      - parallel:
+          - name: Check site
+            run: zola check
+
+          - name: Build site
+            run: zola build
 
       - name: Upload static files as artifact
-        id: deployment
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@main
         with:
           path: public/
 
@@ -39,8 +84,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     # Specify runner + deployment step
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@main
